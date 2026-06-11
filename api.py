@@ -21,9 +21,13 @@ from typing import Optional
 from fastapi import FastAPI, Header, HTTPException
 from pydantic import BaseModel, Field
 
-from engine import (
-    Candle, ChallengeConfig, Order, OrderType, Side, TradingEngine,
+from models import (
+    Account, ChallengeConfig, ChallengePhase, Order, OrderType,
+    OrderStatus, Position, Side, BreachReason,
 )
+from fill_engine import Candle, FillEngine, FillParams
+from risk_engine import RiskEngine
+from engine import TradingEngine
 
 app = FastAPI(title="PropFirm Engine", version="0.1.0")
 engine = TradingEngine()

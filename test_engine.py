@@ -13,14 +13,17 @@ Covers the scenarios that matter commercially:
 """
 
 import sys, os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from decimal import Decimal as D
 
-from engine import (
-    Candle, ChallengeConfig, ChallengePhase, FillEngine, FillParams,
-    Order, OrderStatus, OrderType, Side, TradingEngine, BreachReason,
+from models import (
+    Account, ChallengeConfig, ChallengePhase, Order, OrderType,
+    OrderStatus, Position, Side, BreachReason,
 )
+from fill_engine import Candle, FillEngine, FillParams
+from risk_engine import RiskEngine
+from engine import TradingEngine
 
 SYM = "BTC/USDT"
 DAY_MS = 86_400_000

@@ -24,7 +24,7 @@ from datetime import datetime, timezone
 from decimal import Decimal
 from typing import Optional
 
-from .models import Account, BreachReason, ChallengePhase
+from models import Account, BreachReason, ChallengePhase
 
 
 def utc_day(ts: Optional[float] = None) -> str:
